@@ -1,0 +1,85 @@
+<template name="header">
+    {{#if currentUser}}
+    <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/"><i class="fa fa-opencart" aria-hidden="true"></i>        </a>
+                <a class="navbar-brand" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-shopping-basket" aria-hidden="true"></i>    </a>
+                <a class="navbar-brand" href="profile"><i class="fa fa-user-circle" aria-hidden="true"></i>        </a>
+                <a class="navbar-brand" href="users"><i class="fa fa-users" aria-hidden="true"></i>        </a>
+                <a class="navbar-brand" href="message"><i class="fa fa-comments" aria-hidden="true"></i>        </a>
+                <a class="navbar-brand" href="shop"><i class="fa fa-shopping-cart" aria-hidden="true"></i>        </a>
+
+
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="inventory">Inventory</a></li>
+                            <li><a href="schedule">Scheduler</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li class="dropdown-header">Nav header</li>
+                            <li><a href="">Separated link</a></li>
+                            <li><a href="">One more separated link</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+
+                        <li><a href="profile">@ {{currentUser.username}}</a></li>
+                        <li><a href="" class="logout">Logout <i class="fa fa-power-off" aria-hidden="true"></i></a></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+    </nav>
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="note">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Post</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form class="register-form" id="category">
+                    <div class="modal-body">
+
+                            <div class="form-group col-xs-6">
+                                <label class="plain">Item</label>
+                                <input type="text" class="form-control plain" id="categoryName"/>
+
+                            </div>
+                        <div class="form-group col-xs-6">
+                            <label class="plain">Price</label>
+                            <input type="number" class="form-control plain" id="productPrice"/>
+
+                        </div>
+
+                        <label class="plain">Image</label>
+                        <span class="btn btn-default btn-file">Upload
+                        <input type="file" accept=".gif,.jpg,.png" class="myFeedImgInput" id="feedImg">
+                                 </span>
+
+
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    {{/if}}
+</template>
